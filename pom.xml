@@ -7,7 +7,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>api</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.4</version>
     <name>api</name>
     <description>Main branch of APIs for adiwal.com</description>
     <properties>
@@ -69,19 +69,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>com.google.cloud.tools</groupId>
-                <artifactId>jib-maven-plugin</artifactId>
-                <version>0.9.10</version>
-                <configuration>
-                    <to>
-                        <image>registry.hub.docker.com/adiwalv/api</image>
-                    </to>
-                    <from>
-                        <image>openjdk:15-jdk</image>
-                    </from>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>io.fabric8</groupId>
