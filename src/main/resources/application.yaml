@@ -1,0 +1,7 @@
+server:
+  port: 8081
+
+security:
+  tokenUrl: http://localhost:8080/oauth/check_token
+  clientId: client
+  clientSecret: client123
