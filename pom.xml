@@ -42,12 +42,17 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-rest-hal-browser</artifactId>
+            <artifactId>spring-data-rest-hal-explorer</artifactId>
         </dependency>
         <dependency>
             <groupId>com.adiwal</groupId>
             <artifactId>auth-client</artifactId>
             <version>0.0.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.adiwal</groupId>
+            <artifactId>commons</artifactId>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
