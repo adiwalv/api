@@ -5,8 +5,19 @@ import org.springframework.data.annotation.Id
 
 
 data class BlogPost(@Id var id: String?,
-                    var name: String) : Audit()
+                    var blogName: String,
+                    var blogContent: String) : Audit()
 
-data class Comment(@Id var id: String?,
-                   var text: String,
-                   var blogPostId: String) : Audit()
+data class Comment(var commentContent: String) : Audit()
+
+data class CommentThread(@Id var id: String?,
+                         var commentContent: String,
+                         var blogPostId: String,
+                         var children: MutableList<Comment>?) : Audit() {
+    fun addComment(comment: Comment) {
+        if (children == null) {
+            children = mutableListOf()
+        }
+        children?.add(comment)
+    }
+}

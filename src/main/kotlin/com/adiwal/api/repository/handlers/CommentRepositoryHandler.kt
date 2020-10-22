@@ -1,7 +1,7 @@
 package com.adiwal.api.repository.handlers
 
 import com.adiwal.api.domain.BlogPost
-import com.adiwal.api.domain.Comment
+import com.adiwal.api.domain.CommentThread
 import com.adiwal.api.service.BlogPostService
 import lombok.extern.slf4j.Slf4j
 import org.springframework.beans.factory.annotation.Autowired
@@ -21,7 +21,7 @@ class CommentRepositoryHandler {
 
     @HandleBeforeCreate
     @HandleBeforeSave
-    fun beforeCreate(comment: Comment) {
-        val blogPost: BlogPost = blogPostService.findById(comment.blogPostId) // look if blogpost exists
+    fun beforeCreate(commentThread: CommentThread) {
+        val blogPost: BlogPost = blogPostService.findById(commentThread.blogPostId) // look if blogpost exists
     }
 }
