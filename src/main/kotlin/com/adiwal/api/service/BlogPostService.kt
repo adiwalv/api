@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 class BlogPostService(val blogPostRepository: BlogPostRepository) {
 
     fun findById(id: String): BlogPost {
-        return blogPostRepository.findById(id).orElseThrow { ResourceNotFoundException("Blog post with" + id + "not found") }
+        return blogPostRepository.findById(id).orElseThrow { ResourceNotFoundException("Blog post with $id not found") }
     }
 
     fun save(blogPost: BlogPost): BlogPost {

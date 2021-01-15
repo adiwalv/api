@@ -4,3 +4,6 @@ security:
   tokenurl: http://localhost:8080/oauth/check_token
   clientid: client
   clientsecret: client123
+management:
+  server:
+    port: 9001
