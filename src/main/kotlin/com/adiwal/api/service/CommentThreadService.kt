@@ -4,6 +4,7 @@ import com.adiwal.api.domain.Comment
 import com.adiwal.api.domain.CommentThread
 import com.adiwal.api.repository.CommentThreadRepository
 import com.adiwal.api.utils.ApiUtils
+import org.joda.time.DateTime
 import org.springframework.data.rest.webmvc.ResourceNotFoundException
 import org.springframework.stereotype.Service
 import java.util.*
@@ -24,8 +25,8 @@ class CommentThreadService(val commentThreadRepository: CommentThreadRepository)
         val apiUtils = ApiUtils()
         comment.createdBy = apiUtils.getCurrentUserName()
         comment.lastModifiedBy = apiUtils.getCurrentUserName()
-        comment.createdDate = Date()
-        comment.lastModifiedDate = Date()
+        comment.createdDate = DateTime()
+        comment.lastModifiedDate = DateTime()
         commentThread.addComment(comment)
         return save(commentThread)
     }
