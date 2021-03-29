@@ -6,7 +6,9 @@ import org.springframework.data.annotation.Id
 
 data class BlogPost(@Id var id: String?,
                     var blogName: String,
-                    var blogContent: String) : Audit()
+                    var blogContent: String,
+                    var blogDescription: String,
+                    var blogTopic: String) : Audit()
 
 data class Comment(var commentContent: String) : Audit()
 
