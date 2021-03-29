@@ -7,6 +7,7 @@ import com.adiwal.api.utils.ApiUtils
 import org.joda.time.DateTime
 import org.springframework.data.rest.webmvc.ResourceNotFoundException
 import org.springframework.stereotype.Service
+import java.time.Instant
 import java.util.*
 
 @Service
@@ -22,11 +23,8 @@ class CommentThreadService(val commentThreadRepository: CommentThreadRepository)
 
     fun replyToCommentThread(id: String, comment: Comment): CommentThread {
         val commentThread = findById(id)
-        val apiUtils = ApiUtils()
-        comment.createdBy = apiUtils.getCurrentUserName()
-        comment.lastModifiedBy = apiUtils.getCurrentUserName()
-        comment.createdDate = DateTime()
-        comment.lastModifiedDate = DateTime()
+        comment.createdBy = ApiUtils.getCurrentUserName()
+        comment.lastModifiedBy = ApiUtils.getCurrentUserName()
         commentThread.addComment(comment)
         return save(commentThread)
     }

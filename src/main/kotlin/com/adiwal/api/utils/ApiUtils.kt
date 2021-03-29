@@ -5,10 +5,13 @@ import java.util.*
 
 class ApiUtils {
 
-    fun getCurrentUserName(): String? {
-        val authentication = SecurityContextHolder.getContext().authentication
-        return if (Objects.nonNull(authentication)) {
-            authentication.name
-        } else null
+    companion object {
+        @JvmStatic
+        fun getCurrentUserName(): String? {
+            val authentication = SecurityContextHolder.getContext().authentication
+            return if (Objects.nonNull(authentication)) {
+                authentication.name
+            } else null
+        }
     }
 }

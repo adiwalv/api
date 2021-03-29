@@ -6,10 +6,12 @@ import org.springframework.context.annotation.ComponentScan
 import org.springframework.data.mongodb.config.EnableMongoAuditing
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
 
-@ComponentScan("com.adiwal.*")
 @EnableMongoAuditing
 @EnableMongoRepositories
-@SpringBootApplication
+@SpringBootApplication(
+	scanBasePackageClasses = [ApiApplication::class],
+	scanBasePackages = ["com.adiwal.*", "com.adiwal.authclient"]
+)
 class ApiApplication
 
 fun main(args: Array<String>) {
