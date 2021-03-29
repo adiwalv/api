@@ -13,7 +13,7 @@
         <version>1.3</version>
     </parent>
     <artifactId>api</artifactId>
-    <version>0.0.15</version>
+    <version>0.0.16</version>
     <name>api</name>
     <description>Main branch of APIs for adiwal.com</description>
 
